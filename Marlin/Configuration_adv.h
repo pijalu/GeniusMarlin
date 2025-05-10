@@ -1031,12 +1031,13 @@
 //
 // Add the G35 command to read bed corners to help adjust screws. Requires a bed probe.
 //
-//#define ASSISTED_TRAMMING
+#define ASSISTED_TRAMMING
 #if ENABLED(ASSISTED_TRAMMING)
+  #define TRAMMING_DISTANCE   45 // (mm) Distance from the probe to the bed edge
 
   // Define from 3 to 9 points to probe.
-  #define TRAMMING_POINT_XY { {  20, 20 }, { 180,  20 }, { 180, 180 }, { 20, 180 } }
-
+  #define TRAMMING_POINT_XY { {  TRAMMING_DISTANCE, TRAMMING_DISTANCE }, { X_BED_SIZE-TRAMMING_DISTANCE,  TRAMMING_DISTANCE }, { X_BED_SIZE-TRAMMING_DISTANCE, Y_BED_SIZE-TRAMMING_DISTANCE }, { TRAMMING_DISTANCE, Y_BED_SIZE-TRAMMING_DISTANCE } }
+  
   // Define position names for probe points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
   #define TRAMMING_POINT_NAME_2 "Front-Right"
