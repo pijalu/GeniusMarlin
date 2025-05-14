@@ -1516,7 +1516,8 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 } // Wagster
+// #define NOZZLE_TO_PROBE_OFFSET { 28, -33, 0 } // Wagster
+#define NOZZLE_TO_PROBE_OFFSET { 26, -31, 0 } // THiNK_X1_5015_Fan_-_Duct_R3.STL - https://www.thingiverse.com/thing:4584489
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
