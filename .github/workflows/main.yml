@@ -6,9 +6,9 @@ name: PIO CI
 # events but only for the master branch
 on:
   push:
-    branches: [ custom/genius, custom/genius-ubl ]
+    branches: [ custom/genius, custom/genius-ubl, custom/genius-ubl-zstep ]
   pull_request:
-    branches: [ custom/genius, custom/genius-ubl ]
+    branches: [ custom/genius, custom/genius-ubl, custom/genius-ubl-zstep ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
