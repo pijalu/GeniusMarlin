@@ -671,8 +671,8 @@
  * PIDTEMP : PID temperature control (~4.1K)
  * MPCTEMP : Predictive Model temperature control. (~1.8K without auto-tune)
  */
-//#define PIDTEMP           // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
-#define MPCTEMP         // See https://marlinfw.org/docs/features/model_predictive_control.html
+#define PIDTEMP           // See the PID Tuning Guide at https://reprap.org/wiki/PID_Tuning
+//#define MPCTEMP         // See https://marlinfw.org/docs/features/model_predictive_control.html
 
 #define PID_MAX  255      // Limit hotend current while PID is active (see PID_FUNCTIONAL_RANGE below); 255=full current
 #define PID_K1     0.95   // Smoothing factor within any PID loop
@@ -690,9 +690,10 @@
     #define DEFAULT_Ki_LIST {   0.57,   0.57 }
     #define DEFAULT_Kd_LIST {  37.76,  37.76 }
   #else
-    #define DEFAULT_Kp   9.31
-    #define DEFAULT_Ki   0.57
-    #define DEFAULT_Kd  37.76
+    // Tweaked new hotdend 
+    #define DEFAULT_Kp 16.1320
+    #define DEFAULT_Ki 3.1762
+    #define DEFAULT_Kd 20.4836
   #endif
 #else
   #define BANG_MAX 255    // Limit hotend current while in bang-bang mode; 255=full current
@@ -777,10 +778,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Print Bed PID debug data to the serial port.
 
-  // Genius
-  #define DEFAULT_bedKp 92.46
-  #define DEFAULT_bedKi 16.12
-  #define DEFAULT_bedKd 132.55
+  // Genius - tuned
+  #define DEFAULT_bedKp 27.1008
+  #define DEFAULT_bedKi 3.8921
+  #define DEFAULT_bedKd 125.8021
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #else
@@ -1199,7 +1200,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT  { 80, 80, 400, 413.95 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT  { 80, 80, 400, 418.549 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
